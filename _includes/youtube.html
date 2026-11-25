@@ -1,0 +1,64 @@
+
+{%- assign video_id = include.id | strip -%}
+
+<div class="oti-youtube" data-video-id="{{ video_id | escape }}">
+  <div class="oti-youtube-notice">
+    <p><strong>YouTube video</strong></p>
+    <p>
+      This video is hosted by YouTube. Loading it will connect
+      your browser to Google, which may process information
+      about your visit and use cookies or similar technologies.
+    </p>
+    <button type="button" class="oti-youtube-load">
+      Load video
+    </button>
+    <p>
+      <small>
+        <a href="{{ site.privacy_url | relative_url }}">
+          Privacy &amp; Cookies
+        </a>
+      </small>
+    </p>
+  </div>
+</div>
+
+<script>
+  if (!window.otiYouTubeInitialized) {
+    window.otiYouTubeInitialized = true;
+
+    document.addEventListener("click", function (event) {
+      const button = event.target.closest(".oti-youtube-load");
+      if (!button) return;
+
+      const container = button.closest(".oti-youtube");
+      if (!container || container.dataset.loaded === "true") return;
+
+      const id = container.dataset.videoId;
+      if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
+
+      const iframe = document.createElement("iframe");
+     iframe.src = "https://www.youtube.com/embed/" +
+  encodeURIComponent(id) + "?autoplay=1";
+      iframe.title = "YouTube video player";
+      iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+      container.dataset.loaded = "true";
+      container.replaceChildren(iframe);
+
+        const fallback = document.createElement("p");
+        fallback.className = "oti-youtube-fallback";
+
+        const link = document.createElement("a");
+        link.href = "https://www.youtube.com/watch?v=" + encodeURIComponent(id);
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Having trouble playing? Watch directly on YouTube";
+
+        fallback.appendChild(link);
+        container.after(fallback);
+
+    });
+  }
+</script>

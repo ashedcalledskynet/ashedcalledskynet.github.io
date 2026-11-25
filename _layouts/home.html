@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+
+
+
+
+  <div>{{ site.home_intro | escape }} There are {{ site.posts.size }} posts.</div>
+  <br>
+
+  <!-- This loops through the paginated posts -->
+  <div class="module-grid">
+
+    {% for post in paginator.posts %}
+
+    <a class="flex-module third" href="{{ post.url | relative_url }}">
+      
+      {%- if post.thumb -%}
+        <img class="tmpImage" src="{{ post.thumb | relative_url }}">
+      {%- else -%}
+        <img class="tmpImageEmpty" width="300px" height="169px">
+      {%- endif -%}
+
+      <h3 class="mod-title">{{ post.title }}</h3>
+
+      {%- if site.show_excerpts -%}
+        <p>{{ post.excerpt | strip_html }}...</p>
+      {%- endif -%}
+
+    </a>
+    
+    {% endfor %}
+    
+  </div>
+
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">&laquo;</a>
+  {% else %}
+    <span class="previous"></span>
+  {% endif %}
+  <span class="page_number ">
+    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="next">&raquo;</a>
+  {% else %}
+    <span class="next "></span>
+  {% endif %}
+</div>

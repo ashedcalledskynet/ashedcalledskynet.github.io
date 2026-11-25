@@ -1,0 +1,14 @@
+{%- if site.social_links and site.social_links.size > 0 -%}
+<ul class="social-media-list">
+  {%- for social in site.social_links -%}
+    <li>
+      <a href="{{ social.url | escape }}" aria-label="{{ social.name | escape }}">
+        <svg class="svg-icon" aria-hidden="true">
+          <use xlink:href="{{ '/assets/images/minima-social-icons.svg' | relative_url }}#{{ social.icon | escape }}"></use>
+        </svg>
+        <span class="username">{{ social.username | escape }}</span>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}

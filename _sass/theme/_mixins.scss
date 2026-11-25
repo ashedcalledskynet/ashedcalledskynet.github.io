@@ -1,0 +1,23 @@
+@use "variables";
+@use "sass:math";
+
+// Responsive media queries.
+//
+// Example:
+// @include media-query(variables.$on-palm) {
+//   .wrapper {
+//     padding-right: math.div(variables.$spacing-unit, 2);
+//     padding-left: math.div(variables.$spacing-unit, 2);
+//   }
+// }
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// Relative font sizing.
+@mixin relative-font-size($ratio) {
+  font-size: variables.$base-font-size * $ratio;
+}

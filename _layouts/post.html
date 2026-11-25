@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="post-entry">
+  
+  <h1 class="main-title">{{ page.title | escape }}</h1>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <div class="post-footer">
+
+    <P class="foot-title">{{ page.title | escape }}</P>
+
+    <p class="post-foot-meta">Posted on {{ page.date | date: "%-d %B %Y" }} in 
+
+    {% if post %}
+      {% assign categories = post.categories %}
+    {% else %}
+      {% assign categories = page.categories %}
+    {% endif %}
+
+    {% for category in categories %}
+      <a href="{{ category | downcase | prepend: site.category_path | relative_url }}">{{category}}</a>
+    {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+
+    by {{ page.author }}</p>
+    
+  </div>
+
+  <div class="page-navigation">
+    {% if page.previous.url %}
+      <a class="prev" href="{{ page.previous.url | relative_url }}">prev</a>
+    {% endif %}
+
+    <a href="#top"> top </a>
+
+    {% if page.next.url %}
+      <a class="next" href="{{ page.next.url | relative_url }}">next</a>
+    {% endif %}
+  </div>
+
+</article>

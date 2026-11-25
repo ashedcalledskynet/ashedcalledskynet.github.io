@@ -1,0 +1,24 @@
+<footer class="site-footer">
+  
+  {%- if page.is_post -%}
+    {%- include related_posts.html -%}
+  {%- endif -%}
+
+  <div class="wrapper">
+    <div class="foot_meta">
+      Fuelled by <a href="https://jekyllrb.com/">Jekyll</a>
+      , nitro by <a href="https://dyadica.github.io">dyadica</a>
+      | <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+      | <a href="{{ site.disclaimer_url | relative_url }}">disclaimer</a>
+      | <a href="{{ site.privacy_url | relative_url }}">privacy &amp; cookies</a>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="wrapper">
+    {%- include social.html -%}
+  </div>
+
+</footer>
+

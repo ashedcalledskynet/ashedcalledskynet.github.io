@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+
+
+  <h1 class="main-title">{{ site.heading_prefix | escape }} <span class="light">{{ site.heading_highlight | escape }}</span> {{ site.heading_suffix | escape }}: {{ page.title | escape }}</h1>
+  <div>{{ site.blog_intro | escape }} There are {{ site.posts.size }} posts.</div>
+  <br>
+
+  <!-- This loops through the paginated posts -->
+  <div class="module-grid blog-post">
+
+    {% for post in paginator.posts %}
+
+    <a class="flex-module third" href="{{ post.url | relative_url }}">
+      
+      {%- if post.thumb -%}
+        <img class="tmpImage" src="{{ post.thumb | relative_url }}">
+      {%- else -%}
+        <img class="tmpImageEmpty" width="300px" height="169px">
+      {%- endif -%}
+
+      <h3 class="mod-title">{{ post.title }}</h3>
+
+      {%- if site.show_excerpts -%}
+        <p>{{ post.excerpt | strip_html }}...</p>
+      {%- endif -%}
+
+    </a>
+    
+    {% endfor %}
+    
+  </div>
+
+
+  <!-- Pagination links -->
+  {%- include pagination.html -%}

@@ -1,0 +1,14 @@
+<!-- Navigation -->
+
+<div class="navbar" id="navbar">
+  <div class="wrapper">
+  {% for item in site.data.navbar %}
+    <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+  {% endfor %} 
+
+  <a href="javascript:void(0);" class="icon" onclick="naviFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+
+  </div>
+</div>

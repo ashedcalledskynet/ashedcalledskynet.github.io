@@ -1,0 +1,111 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Your Website
+privacy: ""
+privacy_url: "/privacy/"
+disclaimer_url: "/disclaimer/"
+description: A demonstration of the Dyadica Jekyll theme.
+baseurl: ""
+url: ""
+permalink: /blog/:title/
+category_path: "/blog/categories/"
+
+# Site heading and introductory text.
+heading_prefix: Your
+heading_highlight: Website
+heading_suffix: ""
+home_intro: Welcome to your new website.
+blog_intro: Explore the latest articles and projects.
+social_links: []
+
+# Blog pagination.
+# Number of posts displayed per blog page.
+paginate: 9
+paginate_path: "/blog/page:num/"
+
+# Post excerpts.
+# Display excerpts in the home and blog layouts.
+show_excerpts: true
+
+# Optional custom excerpt separator.
+# Uncomment to manually define where a post excerpt ends.
+# excerpt_separator: "<!--more-->"
+
+# Related posts configuration.
+# Posts are matched using shared tags.
+related_posts_settings:
+  max_posts: 3
+  min_common_tags: 1
+
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Using Front Matter Defaults to enable check is_post and is_page
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      is_post: true # automatically set is_post=true for all posts      
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: pages   # limit to posts
+    values:
+      is_page: true # automatically set is_page=true for all pages
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+exclude:
+    - node_modules
+    - README.md
+    - THIRD-PARTY.md
+    - LICENSE
+    - licenses
+    - "*.bat"
+    - "*.zip"
+
+# Replace with your own icon path.
+favicon: "/favicon.ico"

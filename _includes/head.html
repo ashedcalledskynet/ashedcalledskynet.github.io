@@ -1,0 +1,20 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   {%- seo -%}
+
+  {% if site.favicon %}<link rel="icon" href="{{ site.favicon | relative_url }}">{% endif %}
+  <!-- Preload the primary locally hosted font -->
+  <link rel="preload" href="{{ '/assets/fonts/open-sans/open-sans.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  {%- feed_meta -%}
+
+  <script type="text/javascript" src="{{ '/assets/js/jquery-3.6.0.min.js' | relative_url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/js/jscripts.js' | relative_url }}"></script>
+  <script type="text/javascript" src="{{ '/assets/js/sine-waves.js' | relative_url }}"></script>
+
+  
+</head>
