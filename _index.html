@@ -1,0 +1,14 @@
+---
+title: Home
+layout: default
+permalink: /
+---
+
+<h1 class="main-title">{{ site.heading_prefix | escape }} <span class="light">{{ site.heading_highlight | escape }}</span> {{ site.heading_suffix | escape }}</h1>
+<div class="home_info"><p>{{ site.home_intro | escape }}</p></div>
+
+
+{%- include featured_post.html -%}
+
+{%- include recent_posts.html -%}
+

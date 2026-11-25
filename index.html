@@ -1,14 +1,66 @@
----
-title: Home
-layout: default
-permalink: /
----
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Shed Called Skynet | Coming Soon</title>
+  <link rel="icon" type="image/png" href="assets/images/skynet-icon.png">
 
-<h1 class="main-title">{{ site.heading_prefix | escape }} <span class="light">{{ site.heading_highlight | escape }}</span> {{ site.heading_suffix | escape }}</h1>
-<div class="home_info"><p>{{ site.home_intro | escape }}</p></div>
+  <style>
+    html, body {
+      margin: 0;
+      background: #10231D;
+      color: #E8DCC4;
+      font-family: Arial, sans-serif;
+    }
 
+    main {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
 
-{%- include featured_post.html -%}
+    img {
+      display: block;
+      width: min(100%, 1200px);
+      height: auto;
+    }
 
-{%- include recent_posts.html -%}
+    .message {
+      margin-top: -8%;
+      padding: 0 20px 30px;
+    }
 
+    .tagline {
+      font-size: clamp(16px, 2vw, 24px);
+      margin: 0 0 16px;
+    }
+
+    .coming-soon {
+      color: #F5A623;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img src="assets/images/skynet-logo.png"
+         alt="A Shed Called Skynet"
+         width="1200"
+         height="630">
+
+    <div class="message">
+      <p class="tagline">Something is being built in the shed.</p>
+      <p class="coming-soon">Coming soon</p>
+    </div>
+  </main>
+</body>
+</html>
