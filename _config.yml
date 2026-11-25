@@ -18,23 +18,37 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your Website
-privacy: ""
+title: "A Shed Called Skynet"
+privacy: "privacy@ashedcalledskynet.co.uk"
 privacy_url: "/privacy/"
 disclaimer_url: "/disclaimer/"
-description: A demonstration of the Dyadica Jekyll theme.
+description: "A personal website exploring electronics, engineering, software and workshop projects."
 baseurl: ""
-url: ""
+url: "https://ashedcalledskynet.co.uk"
 permalink: /blog/:title/
 category_path: "/blog/categories/"
 
 # Site heading and introductory text.
-heading_prefix: Your
-heading_highlight: Website
-heading_suffix: ""
-home_intro: Welcome to your new website.
-blog_intro: Explore the latest articles and projects.
-social_links: []
+heading_prefix: "A "
+heading_highlight: "Shed"
+heading_suffix: " Called Skynet"
+home_intro: "Welcome to A Shed Called Skynet. A space for making, experimenting and exploring technology."
+blog_intro: "Explore the latest projects, experiments and developments from the shed."
+social_links:
+  - name: GitHub
+    icon: github
+    username: ashedcalledskynet
+    url: https://github.com/ashedcalledskynet
+
+  - name: Instagram
+    icon: instagram
+    username: ashedcalledskynet
+    url: https://www.instagram.com/ashedcalledskynet/
+
+  - name: YouTube
+    icon: youtube
+    username: ashedcalledskynet
+    url: https://www.youtube.com/@ashedcalledskynet
 
 # Blog pagination.
 # Number of posts displayed per blog page.
